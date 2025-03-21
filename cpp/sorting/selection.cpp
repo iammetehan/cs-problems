@@ -19,6 +19,7 @@ namespace cs_problems::sorting
                     minIndex = j;
                 }
             }
+            
             if (minIndex != i) 
             {
                 std::swap(arr[i], arr[minIndex]);
