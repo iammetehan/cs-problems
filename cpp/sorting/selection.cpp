@@ -4,6 +4,13 @@
 
 namespace cs_problems::sorting
 {
+    Selection Selection::instance;
+
+    Selection* Selection::GetInstance()
+    {
+        return &instance;
+    }
+
     std::vector<int> Selection::Run(const std::vector<int>& input) const
     {
         std::vector<int> arr = input; // Create a copy of the input vector

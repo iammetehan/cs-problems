@@ -3,14 +3,26 @@
 #include "selection.h"
 #include "bubble.h"
 
+std::vector <cs_problems::sorting::Sorting*> sortings;
+
+void AddSortingAlgorithms()
+{
+    sortings.push_back(cs_problems::sorting::Selection::GetInstance());
+    sortings.push_back(cs_problems::sorting::Bubble::GetInstance());
+}
+
+void RunSortingAlgorithmsTests()
+{
+    for (auto* sorting: sortings)
+    {
+        sorting->Test();
+    }
+}
 
 int main()
 {
-    cs_problems::sorting::Sorting* selection = new cs_problems::sorting::Selection();
-    selection->Test();
-
-    cs_problems::sorting::Sorting* bubble = new cs_problems::sorting::Bubble();
-    bubble->Test();
+    AddSortingAlgorithms();
+    RunSortingAlgorithmsTests();
 
     return 0;
 }

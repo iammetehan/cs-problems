@@ -9,5 +9,11 @@ namespace cs_problems::sorting
     public:
         std::vector<int> Run(const std::vector<int>& input) const override;
         void Test() const override;
+        
+        static Bubble *GetInstance();
+   
+    private:
+        Bubble() = default;
+        static Bubble instance;
     };
 };

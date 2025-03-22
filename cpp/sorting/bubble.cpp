@@ -4,6 +4,13 @@
 
 namespace cs_problems::sorting
 {
+    Bubble Bubble::instance;
+
+    Bubble* Bubble::GetInstance()
+    {
+        return &instance;
+    }
+
     std::vector<int> Bubble::Run(const std::vector<int>& input) const
     {
         std::vector<int> arr = input; // Create a copy of the input vector
